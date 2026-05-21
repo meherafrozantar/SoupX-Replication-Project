@@ -1,6 +1,6 @@
-# CSE763 Project: SoupX Ambient RNA Technical Replication Workflow
+# CSE763 Assignment: SoupX Ambient RNA Replication Workflow
 
-This repository contains the functional implementation and technical replication report for identifying, quantifying, and subtracting cell-free extracellular ambient mRNA technical contamination from droplet-based single-cell RNA sequencing (scRNA-seq) matrices. The architecture follows the statistical principles established by Matthew D. Young and Sam Behjati (2020).
+This repository contains the functional implementation and technical replication report for identifying, quantifying, and subtracting cell-free extracellular ambient mRNA technical contamination from droplet-based single-cell RNA sequencing (scRNA-seq) matrices. The architecture follows the statistical estimation models engineered by Matthew D. Young and Sam Behjati (2020).
 
 ## Academic Profile
 * **Student Name:** Meher Afroz
@@ -20,4 +20,16 @@ The analysis pipeline evaluates trace mRNA background distribution and converges
 * **Replicated Contamination Fraction ($\rho$):** `6.2%` (Posterior Estimation Interval Range: 1.3% to 14%)
 
 ## Repository Manifest
-* `soupX_script.R`: The complete automated single-cell pre-processing execution script featuring graph-clustering layers and live diagnostic density plotting functions.
+* `soupX_script.R`: The complete automated single-cell pre-processing execution script featuring Seurat graph-clustering layers and live diagnostic density plotting functions.
+
+## Implementation Steps
+To run this pipeline inside an R/RStudio environment:
+1. Open the project script file `soupX_script.R`.
+2. Ensure the required single-cell toolkit extensions are pre-installed via the R console:
+   ```R
+   install.packages(c("SoupX", "Seurat"))
+   ```
+3. Source the script to execute the integrated validation matrix array and output the diagnostic curve:
+   ```R
+   source("soupX_script.R")
+   ```
