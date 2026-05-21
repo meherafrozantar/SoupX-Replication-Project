@@ -7,7 +7,7 @@ This repository hosts the background correction replication code for processing 
 * **Lineage Exclusion Background Profiles:** Hemoglobin and Immunoglobin genes (`HBB`, `HBA1`, `HBA2`, `IGKC`, `IGHG1`, `IGHG2`, `IGHG3`).
 
 ## Project Replication Results
-Running the fully automated pipeline isolates the background empty droplet profiles to calculate the final ambient mRNA technical noise value:
+Running the automated pipeline isolates the background empty droplet profiles to calculate the final ambient mRNA technical noise value:
 * **Replicated Contamination Fraction ($\rho$):** `4.21%`
 
 ## Script Execution Dependencies
