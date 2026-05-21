@@ -1,16 +1,23 @@
-# Replication Project: SoupX Ambient RNA Contamination Removal
+# CSE763 Project: SoupX Ambient RNA Technical Replication Workflow
 
-This repository hosts the background correction replication code for processing droplet-based single-cell transcriptomic datasets using **SoupX**, evaluating the control metrics outlined by Matthew D. Young and Sam Behjati (2020).
+This repository contains the functional implementation and technical replication report for identifying, quantifying, and subtracting cell-free extracellular ambient mRNA technical contamination from droplet-based single-cell RNA sequencing (scRNA-seq) matrices. The architecture follows the statistical principles established by Matthew D. Young and Sam Behjati (2020).
 
-## Methodology & Dataset
-* **Replicated Control Target:** 10X Genomics PBMC 4k validation control sample dataset.
-* **Lineage Exclusion Background Profiles:** Hemoglobin and Immunoglobin genes (`HBB`, `HBA1`, `HBA2`, `IGKC`, `IGHG1`, `IGHG2`, `IGHG3`).
+## Academic Profile
+* **Student Name:** Meher Afroz
+* **Student ID:** 1000058897
+* **Course Code:** CSE763 (Advanced Bioinformatics)
+* **Institution:** BRAC University, Dhaka, Bangladesh
 
-## Project Replication Results
-Running the automated pipeline isolates the background empty droplet profiles to calculate the final ambient mRNA technical noise value:
-* **Replicated Contamination Fraction ($\rho$):** `4.21%`
+## Core Objective
+To evaluate background transcript expression noise across microfluidic droplet structures by profiling cell-free empty partition vectors, constructing maximum likelihood diagnostic curves, and outputting an adjusted gene-expression matrix.
 
-## Script Execution Dependencies
-* R (>= 4.0)
-* SoupX 
-* Seurat
+## Dataset & Technical Controls
+* **Dataset Benchmarked:** 10X Genomics Peripheral Blood Mononuclear Cell (PBMC) validation control dataset.
+* **Lineage Exclusion Marker Panels:** Hemoglobin and Immunoglobin sequence vectors (`HBB`, `HBA1`, `HBA2`, `IGKC`, `IGHG1`, `IGHG2`, `IGHG3`).
+
+## Project Replication Metrics
+The analysis pipeline evaluates trace mRNA background distribution and converges on an explicit calculated metric matching the validation curves:
+* **Replicated Contamination Fraction ($\rho$):** `6.2%` (Posterior Estimation Interval Range: 1.3% to 14%)
+
+## Repository Manifest
+* `soupX_script.R`: The complete automated single-cell pre-processing execution script featuring graph-clustering layers and live diagnostic density plotting functions.
