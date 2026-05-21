@@ -6,14 +6,14 @@ dir.create("./data", showWarnings = FALSE)
 tmp_dir <- tempdir()
 
 message("Downloading raw data directly...")
-download.file("https://10xgenomics.com", 
+download.file("https://cf.10xgenomics.com/samples/cell-exp/2.1.0/pbmc4k/pbmc4k_raw_gene_bc_matrices.tar.gz", 
               destfile = file.path(tmp_dir, "tod.tar.gz"), quiet = TRUE)
 
 message("Downloading filtered data directly...")
-download.file("https://10xgenomics.com", 
+download.file("https://cf.10xgenomics.com/samples/cell-exp/2.1.0/pbmc4k/pbmc4k_filtered_gene_bc_matrices.tar.gz", 
               destfile = file.path(tmp_dir, "toc.tar.gz"), quiet = TRUE)
 
-# 2. Extract files into workspace
+# 2. Extract files into your Posit Cloud workspace
 untar(file.path(tmp_dir, "tod.tar.gz"), exdir = "./data")
 untar(file.path(tmp_dir, "toc.tar.gz"), exdir = "./data")
 
@@ -49,3 +49,4 @@ replicated_rho <- sc$metaData$rho
 cat("\n======================================================\n")
 cat("FINAL REPLICATED CONTAMINATION VALUE: ", round(replicated_rho * 100, 2), "%\n")
 cat("======================================================\n")
+
